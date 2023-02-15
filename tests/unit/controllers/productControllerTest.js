@@ -4,7 +4,7 @@ const sinonChai = require("sinon-chai");
 
 const { expect } = chai;
 chai.use(sinonChai);
-const { productDataBase, productDataId } = require('./mock/productControllerMock')
+const { productDataBase, productDataId } = require('./mock/productControllerMock');
 const { productsController } = require('../../../src/controllers');
 const { productsServices } = require('../../../src/services');
 
@@ -37,7 +37,7 @@ describe('Testa a camada controller para a rota "/products"', function () {
 
       sinon
         .stub(productsServices, "getAll")
-        .resolves({ type: true, message: productDataBase });
+        .resolves({ type: 500, message: productDataBase });
 
       await productsController.getAll(req, res);
 
