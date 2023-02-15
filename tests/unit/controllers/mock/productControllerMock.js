@@ -10,7 +10,7 @@ const productDataBase = [
   /* ... */
 ];
 
-const productDataId ={
+const productDataId = {
   id: 1,
   name: "Martelo de Thor"
 }
