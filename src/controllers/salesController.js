@@ -14,10 +14,9 @@ const getAll = async (_req, res) => {
 
 const getById = async (req, res) => {
   const { id } = req.params;
-  const { type, message } = await salesService.getById(id);
+  const { type, message } = await salesService.getById(Number(id));
 
   if (type) return res.status(type).json({ message });
-
   return res.status(OK).json(message);
 };
 
