@@ -36,9 +36,21 @@ const updateById = async (id, name) => {
   return { type: null, message: { id, name } };
 };
 
+const removeById = async (id) => {
+  const hasProduct = await productsModel.findById(id);
+  if (hasProduct === undefined) {
+    return { type: NOT_FOUND, message: 'Product not found' };
+  }
+
+  await productsModel.removeById(id);
+
+  return { type: null, message: 'Operação realizada com sucesso!' };
+};
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
   updateById,
+  removeById,
 };
