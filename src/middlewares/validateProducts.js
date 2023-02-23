@@ -11,10 +11,10 @@ const validateName = (req, res, next) => {
   }
 
   if (name.length < 5) {
-  return res
-    .status(STATUS_UNPROCESSABLE)
-    .json({ message: '"name" length must be at least 5 characters long' });
-}
+    return res
+      .status(STATUS_UNPROCESSABLE)
+      .json({ message: '"name" length must be at least 5 characters long' });
+  }
 
   next();
 };
