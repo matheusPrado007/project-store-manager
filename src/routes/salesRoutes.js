@@ -16,5 +16,6 @@ salesRouter.post(
   validateQuantity,
   salesController.insertProduct,
 );
+salesRouter.delete('/:id', salesController.removeById);
 
 module.exports = salesRouter;

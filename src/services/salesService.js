@@ -21,8 +21,20 @@ const insertProduct = async (sales) => {
   return { type: null, message: { id, itemsSold: sales } };
 };
 
+const removeById = async (id) => {
+  const hasProduct = await salesModel.findById(id);
+  if (hasProduct.length === 0) {
+    return { type: NOT_FOUND, message: 'Sale not found' };
+  }
+
+  await salesModel.removeById(id);
+
+  return { type: null, message: 'Operação realizada com sucesso!' };
+};
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
+  removeById,
 };
