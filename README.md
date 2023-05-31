@@ -65,7 +65,7 @@ Siga as etapas abaixo para executar a API:
 1. Clone este repositório para o seu ambiente de desenvolvimento local:
 
 ```bash
-git clone https://github.com/matheusPrado007/project-store-manager
+git clone git@github.com:matheusPrado007/project-store-manager.git
 ```
 2. Abra o terminal e navegue até o diretório raiz do projeto.
 
